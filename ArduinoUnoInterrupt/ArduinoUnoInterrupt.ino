@@ -31,8 +31,9 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(pulse);
-  delay(1000);
+  Serial.println(pulse); //check every channel one by one if you check all channel pulses that will not measure correctly due to the serial.print
+  delay(1000);           //because that is taking time to send the character 1/115200=8.6806us(microsecond) for one bit and multiply 10 that will equal 86.806
+  // one packet frame 1stbit start bit, 8 bit data, no parity and stop bit that is equal 10bit one packet
 }
 ISR(PCINT2_vect) {
   static unsigned long timer_1 = 0, timer_2 = 0, timer_3 = 0, timer_4 = 0;
