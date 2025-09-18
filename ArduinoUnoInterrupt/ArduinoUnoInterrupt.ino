@@ -8,7 +8,7 @@
 #define PD5_LOW ~0b00100000
 #include <string.h>
 
-static unsigned long pulse_1 = 0, pulse_2 = 0, pulse_3 = 0, pulse_4 = 0;
+volatile unsigned long pulse_1 = 0, pulse_2 = 0, pulse_3 = 0, pulse_4 = 0;
 char pulse[] = "pulse_";
 void setup() {
   Serial.begin(115200);
