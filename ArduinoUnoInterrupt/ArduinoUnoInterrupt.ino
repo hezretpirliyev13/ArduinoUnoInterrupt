@@ -37,6 +37,7 @@ void loop() {
 //1. 1-Start bit
 //2. 2-9 bits are data bits
 //3. 10-Stop bit
+// we don't use that parity option
 }
 ISR(PCINT2_vect) {
   static unsigned long timer_1 = 0, timer_2 = 0, timer_3 = 0, timer_4 = 0;
