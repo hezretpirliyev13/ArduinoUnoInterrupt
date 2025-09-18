@@ -34,10 +34,12 @@ void loop() {
   Serial.println(pulse); //check every channel one by one if you check all channel pulses that will not measure correctly due to the serial.print
   delay(1000);           //because that is taking time to send the character 1/115200=8.6806us(microsecond) for one bit and multiply 10 that will equal 86.806
   // one packet frame 1st bit start bit, 8 bit data, no parity and stop bit that is equal 10bit one packet 
-//1. 1-Start bit
-//2. 2-9 bits are data bits
-//3. 10-Stop bit
-// we don't use that parity option
+  // 1. 1-Start bit
+  // 2. 2-9 bits are data bits
+  // 3. 10-Stop bit
+  // we don't use that parity option
+  // and also you would like to test one channel pulse you should enable that channel Pin Change Mask Register(PCMSK2) for example D2 pin would like to test
+  // you should activate that pin mask register and others should be disable
 }
 ISR(PCINT2_vect) {
   static unsigned long timer_1 = 0, timer_2 = 0, timer_3 = 0, timer_4 = 0;
